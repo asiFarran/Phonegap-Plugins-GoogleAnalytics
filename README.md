@@ -10,7 +10,9 @@ Before you can begin collecting metrics data, you need to set up a GoogleAnalyti
     phonegap local plugin add https://github.com/asiFarran/Phonegap-Plugins-GoogleAnalytics.git
 
 
-## Usage
+
+## Usage:
+
 The plugin creates the object window.googleAnalytics
 
 Before using the plugin to track events and view it must be initialized;
@@ -87,3 +89,34 @@ To track an view:
         name: 'myViewName'
     });
 
+
+To set custom dimensions and/or metrics for the entire session use:
+
+     setSessionDimensionsAndMetrics (vars) 
+     
+     where vars takes thie following form:
+     
+     {    
+        dimensions: [      optional array of custom dimensions
+            {
+                index: (int) required
+                value: (string) required
+        }],
+        metrics: [       optional array of custom metrics
+            {
+                index: (int) required
+                value: (int) required
+        }]
+    }
+     
+     
+     e.g:
+     
+     window.googleAnalytics.setSessionDimensionsAndMetrics ({
+        dimensions:[
+            {
+                index: 1,
+                value: 'myValue'
+            }
+        ]
+    });
