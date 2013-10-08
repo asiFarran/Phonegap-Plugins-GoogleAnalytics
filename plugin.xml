@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="com.stratogos.cordova.googleAnalytics"
+        version="0.1.0">
+    <name>GoogleAnalytics</name>
+    <description>Cordova Google Analytics Plugin</description>
+    <author>Asi Farran</author>
+    <license>Apache 2.0</license>
+    <keywords>cordova,google,analytics</keywords>
+
+    <js-module src="www/googleAnalytics.js" name="GoogleAnalytics">
+        <clobbers target="googleAnalytics" />
+    </js-module>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="GoogleAnalytics">
+                <param name="ios-package" value="GoogleAnalyticsPlugin"/>
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/sdk/GAI.h" />
+        <header-file src="src/ios/sdk/GAIDictionaryBuilder.h" />
+        <header-file src="src/ios/sdk/GAIFields.h" />
+        <header-file src="src/ios/sdk/GAILogger.h" />
+        <header-file src="src/ios/sdk/GAITrackedViewController.h" />
+        <header-file src="src/ios/sdk/GAITracker.h" />
+
+
+        <header-file src="src/ios/GoogleAnalyticsPlugin.h" />
+        <source-file src="src/ios/GoogleAnalyticsPlugin.m" />
+        <source-file src="src/ios/sdk/libGoogleAnalyticsServices.a" framework="true" />
+        <framework src="libz.dylib" />
+        <framework src="AdSupport.framework" />
+        <framework src="CoreData.framework" />
+        <framework src="SystemConfiguration.framework" />
+
+    </platform>
+</plugin>
+	
