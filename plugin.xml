@@ -12,8 +12,9 @@
         <clobbers target="googleAnalytics" />
     </js-module>
 
-    <!-- ios -->
+
     <platform name="ios">
+
         <config-file target="config.xml" parent="/*">
             <feature name="GoogleAnalytics">
                 <param name="ios-package" value="GoogleAnalyticsPlugin"/>
@@ -35,6 +36,25 @@
         <framework src="AdSupport.framework" />
         <framework src="CoreData.framework" />
         <framework src="SystemConfiguration.framework" />
+
+    </platform>
+
+    <platform name="android">
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="GoogleAnalytics" >
+                <param name="android-package" value="com.stratogos.cordova.googleAnalytics.GoogleAnalyticsPlugin"/>
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        </config-file>
+
+        <source-file src="src/android/GoogleAnalyticsPlugin.java" target-dir="src/com/stratogos/cordova/googleAnalytics" />
+        <source-file src="src/android/sdk/libGoogleAnalyticsServices.jar"
+                     target-dir="libs" />
 
     </platform>
 </plugin>
