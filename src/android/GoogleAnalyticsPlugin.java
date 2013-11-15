@@ -34,11 +34,11 @@ public class GoogleAnalyticsPlugin extends CordovaPlugin {
 	        	Long val = null;
 	        	
 	        
-	        		try {
-						val = args.getLong(3);
-					} catch (Exception e) {
+	        	try {
+				val = args.getLong(3);
+			} catch (Exception e) {
 						
-					}
+			}
 	        
 	        	
 	        	this.tackEvent(args.getString(0),args.getString(1),args.getString(2),val, args.getJSONArray(4), args.getJSONArray(5));
@@ -154,7 +154,7 @@ public class GoogleAnalyticsPlugin extends CordovaPlugin {
 		 
 		 GoogleAnalytics ga = GoogleAnalytics.getInstance(cordova.getActivity());
 
-         // Optional: set debug to YES for extra debugging information.
+         // Optional: set debug to YES to prevent hits from actually being sent out on the wire.
 		 //ga.setDryRun(true);
 
 		 // Optional: set Logger to VERBOSE for debug information.
