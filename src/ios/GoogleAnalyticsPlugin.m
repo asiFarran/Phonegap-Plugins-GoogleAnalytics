@@ -19,7 +19,7 @@
     
     [GAI sharedInstance].dispatchInterval = dispatchPeriod;
     
-    // Optional: set debug to YES for extra debugging information.
+    // Optional: set debug to YES to prevent hits from actually being sent out on the wire.
     //[GAI sharedInstance].dryRun = YES;
     
      // Optional: set Logger to VERBOSE for debug information.
